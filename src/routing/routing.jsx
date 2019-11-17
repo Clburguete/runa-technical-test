@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 //components
-import { LazyScreen } from './lazy-screen';
+import LazyScreen from './lazy-screen';
 
 export const Routing = props => {
 
@@ -21,7 +21,7 @@ export const Routing = props => {
         />
 
         <Redirect from="" to="/welcome"/>
-        
+
       </Switch>
     </BrowserRouter>
   )

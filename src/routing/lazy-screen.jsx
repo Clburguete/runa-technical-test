@@ -3,31 +3,31 @@ import React, { Component } from 'react';
 export default class LazyScreen extends Component {
 
   static defaultProps = {
-    root: 'screens/'
+    root: 'screens/',
+    route: ''
   }
 
   state = {
     screen: null
   };
 
-  componentDidMount() {
-    this.loadRoute(this.props.route, '');
-  }
+  componentDidMount = () => this.loadRoute(this.props.route,'');
 
-  shouldComponentUpdate = nextProps => {
-    const isRouteUpdate = nextProps.route !== this.props.route;
-    return isRouteUpdate;
-  }
-
-  componentDidUpdate = () => {
+  componentDidUpdate = prevProps => {
     const { route } = this.props;
-    this.loadRoute(route);
+    this.loadRoute(route, prevProps.route);
   }
 
-  async loadRoute(newValue) {
-    const { root } = this.props;
-    const screen = await import(`../${root}${newValue}`);
-    this.setState({ screen: <screen.default /> });
+  async loadRoute(newRoute, oldRoute) {
+    const
+      isRouteUpdate = newRoute !== oldRoute,
+      { root } = this.props;
+
+    if(!isRouteUpdate) return;
+
+    const screen = await import(`../${root}${newRoute}`);
+
+    this.setState({ screen: <screen.default />, });
   }
 
   render() {
