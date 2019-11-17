@@ -15,17 +15,17 @@ export default class LazyScreen extends Component {
 
   componentDidUpdate = prevProps => {
     const { route } = this.props;
-    this.loadRoute(route, prevProps.route);
+    this.loadRoute(route, prevProps.route); 
   }
 
   async loadRoute(newRoute, oldRoute) {
-    const
-      isRouteUpdate = newRoute !== oldRoute,
-      { root } = this.props;
-
+    const isRouteUpdate = newRoute !== oldRoute;
+    
     if(!isRouteUpdate) return;
 
-    const screen = await import(`../${root}${newRoute}`);
+    const 
+      { root } = this.props,
+      screen = await import(`../${root}${newRoute}`);
 
     this.setState({ screen: <screen.default />, });
   }
