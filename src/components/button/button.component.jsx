@@ -11,7 +11,7 @@ export const Button = ({ handleClick, text }) => {
     <button 
       className='c-button'
       onClick={_handleClick}>
-      {text}
+      {text.toUpperCase()}
     </button>
   )
 }
