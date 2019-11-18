@@ -10,9 +10,34 @@ const defaultOptions = {
   referrer: 'no-referrer',
 }
 
-export const SERVICES = {
-  getRandom: {
-    options: {...defaultOptions},
-    endpoint: 'https://pokeapi.co/api/v2/pokemon/1'
+const host = 'https://api.coinbase.com/v2/';
+
+let SERVICES = {
+  GET_CURRENCIES: {
+    endpoint: 'currencies'
+  },
+  GET_EXCHANGE_RATES: {
+    endpoint: 'exchange-rates/currency='
+  },
+  GET_BUY_PRICE: {
+    endpoint: 'prices/',
+    action: '/buy'
+  },
+  GET_SELL_PRICE: {
+    endpoint: 'prices/',
+    action: '/sell'
+  },
+  GET_MARKER_VALUE: {
+    endpoint: 'prices/',
+    action: '/spot'
   }
 }
+
+SERVICES = Object.keys.map(key => {
+  const serviceConfig = SERVICES[key];
+  serviceConfig.endpoint = `${host}${serviceConfig.endpoint}`
+  return serviceConfig;
+})
+
+export default SERVICES;
+
