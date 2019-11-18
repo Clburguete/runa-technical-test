@@ -6,13 +6,12 @@ import './input.css';
 
 export const Input = props => {
 
-  const _handleChange = (_value) => this.props.handleChange(_value);
+  const _handleChange = (_value) => props.handleChange(_value);
 
   const {
     id,
     value,
     name,
-    innerRef,
     placeholder,
     type,
     errorMessage,
@@ -24,7 +23,7 @@ export const Input = props => {
     label,
     validityFunc,
     validityRegex
-  } = this.props;
+  } = props;
 
 
   const isInvalid = (!(new RegExp(validityRegex)).test(value)) || validityFunc(value);
@@ -39,7 +38,6 @@ export const Input = props => {
       <input
         className={`c-input ${isInvalid ? 'c-input--invalid' : ''}`}
         id={id}
-        innerRef={innerRef}
         maxLength={maxLength}
         value={value}
         name={name}
@@ -66,7 +64,6 @@ Input.defaultProps = {
   id: '',
   value: '',
   name: '',
-  innerRef: '',
   placeholder: '',
   type: 'text',
   errorMessage: 'Generic ErrorMessage',
