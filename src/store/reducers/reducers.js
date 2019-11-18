@@ -1,4 +1,4 @@
-import { initialState } from "./../initial-state";
+import { initialState } from "@store";
 
 const mapUserName = (state, userName) => {
   return {...state, userName};

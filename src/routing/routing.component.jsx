@@ -1,12 +1,10 @@
 //vendors
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-//config
-import { ROUTES } from './../config';
+//routing utils
+import  {  ROUTES, LazyScreen } from '@routing';
 //guards
-import { RouteGuard } from './../guards';
-//components
-import LazyScreen from './lazy-screen';
+import { RouteGuard } from '@guards';
 
 export const Routing = ({ currRoute }) => {
 

@@ -1,13 +1,13 @@
 //vendors
-import React, { Component } from 'react';
+import React from 'react';
 
-import { ROUTES } from './../../config';
+import { ROUTES } from '@routing';
 
 //styles
 import './header.css';
 
 //components
-import { NavButton } from './../nav-button';
+import { NavButton } from '@components';
 
 export const Header = props => {
   const {
@@ -26,7 +26,7 @@ export const Header = props => {
       {
         Object.keys(ROUTES).map((key, i) => {
           const route = ROUTES[key];
-          if (key === 'default' || key === 'welcome') return;
+          if (key === 'default' || key === 'welcome') return false;
           return (
             <NavButton
               key={`${i}${key}`}

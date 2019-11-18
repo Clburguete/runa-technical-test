@@ -1,14 +1,10 @@
 //vendors
-import React, { Component, useContext } from 'react';
+import React from 'react';
 
 //config
-import { ROUTES } from './../../config';
-
-//context
-import { ErrorContext } from './../../context';
+import { ROUTES } from '@routing';
 
 //components
-import { NavButton } from './../../components';
 import { UserForm } from './user-form';
 
 export const WelcomeView = props => {
@@ -17,7 +13,6 @@ export const WelcomeView = props => {
     userName,
     isUserCreated
   } = props;
-  const { errorType, setErrorType } = useContext(ErrorContext)
   const navigateToDashboard = () => history.push(ROUTES.dashboard.path);
 
   return (

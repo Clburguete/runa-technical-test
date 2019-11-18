@@ -1,7 +1,7 @@
 //vendors
 import React from 'react';
 //components
-import { Button } from './../button';
+import { Button } from '@components';
 
 export const NavButton = ({ text, path, handleClick, className='' }) => {
   const _handleClick = () => handleClick(path);

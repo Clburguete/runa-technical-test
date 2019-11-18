@@ -1,5 +1,5 @@
 //vendors
-import { filter, map, mergeMap, catchError } from 'rxjs/operators';
+import { filter, mergeMap, catchError } from 'rxjs/operators';
 
 //services
 import { fetchSpotPrice } from './get-spot';

@@ -1,7 +1,7 @@
 //vendors
 import React, { useEffect } from 'react';
 
-import { Header } from './../../components';
+import { Header } from '@components';
 
 export const CurrenciesView = props =>{
   const { fetchCurrencies, logout, history, userName } = props;

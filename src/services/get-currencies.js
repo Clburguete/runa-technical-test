@@ -1,4 +1,4 @@
-import {  SERVICES } from './../config';
+import {  SERVICES } from '@services';
 
 const { GET_CURRENCIES } = SERVICES;
 console.log(SERVICES)

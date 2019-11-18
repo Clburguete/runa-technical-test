@@ -1,9 +1,7 @@
 //vendors
 import React, { Component } from 'react';
-//components
-import { Link } from './../components';
 
-export default class LazyScreen extends Component {
+export class LazyScreen extends Component {
 
   static defaultProps = {
     root: 'screens/',
@@ -34,9 +32,7 @@ export default class LazyScreen extends Component {
   }
 
   render() {
-    const 
-      { screen } = this.state,
-      { history, route } = this.props;
+    const { screen } = this.state;
 
     return !screen ? '' :
     <>

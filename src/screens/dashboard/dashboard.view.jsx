@@ -1,15 +1,11 @@
 //vendors
 import React, { useEffect } from 'react';
 
-//config
-import { ROUTES } from './../../config';
-
 //components
 import {
-  NavButton,
   CurrencyButton,
   Header
-} from './../../components';
+} from '@components';
 
 export const DashboardView = (props) => {
   const { 

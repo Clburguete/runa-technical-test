@@ -1,0 +1,47 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": false
+        }
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": false
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "@assets": "./src/assets",
+          "@components": "./src/components",
+          "@context": "./src/context",
+          "@guards": "./src/guards",
+          "@routing": "./src/routing",
+          "@services": "./src/services",
+          "@store": "./src/store",
+          "@styles": "./src/styles"
+        }
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "react-hot-loader/babel"
+  ]
+}

@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 import { Redirect } from 'react-router-dom';
 
 //config
-import { ROUTES } from './../../config';
+import { ROUTES } from '@routing';
 
 export class UserGuard extends Component {
   
