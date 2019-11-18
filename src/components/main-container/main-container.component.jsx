@@ -1,7 +1,22 @@
-import React from 'react';
+//vendors
+import React, { useContext } from 'react';
 
-export const MainContainer = props => (
-  <div>
-    {props.children}
-  </div>
-)
+//context
+import { ErrorContext } from './../../context';
+
+export const MainContainer = props => {
+  const 
+    { errorType } = useContext(ErrorContext),
+    hasError = !!errorType,
+    throwError = () => {
+      throw Error('something went wrong!')
+    };
+  
+    hasError && throwError();
+
+  return (
+    <>
+      {props.children}
+    </>
+  )
+}

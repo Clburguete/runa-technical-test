@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+//vendors
+import React, { Component, useContext } from 'react';
 
-export class WelcomeView extends Component {
+//errorContext
+import { ErrorContext } from './../../context';
+
+export const WelcomeView = props => {
+  const { errorType, setErrorType } = useContext(ErrorContext)
+
+  setErrorType('asdsad');
   
-  render = () => {
-    console.log('welcome view');
-    return (
-      <>
-        <h2>WelcomeView!!</h2>
-      </>
-    )
-  }
+  return (
+    <>
+      <h2>WelcomeView!!</h2>
+    </>
+  )
 }

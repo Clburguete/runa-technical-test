@@ -1,5 +1,11 @@
 //vendors
-import React from 'react';
+import React, { useContext } from 'react';
+
+//context
+import { ErrorProviderWrapper, ErrorContext } from './context';
+
+//guards
+import { ErrorBoundary } from './guards';
 
 //assets
 import logo from './assets';
@@ -10,9 +16,13 @@ import { MainContainer } from './components';
 
 const App = () => {
   return (
-    <MainContainer>
-      <Routing/>
-    </MainContainer>
+    <ErrorProviderWrapper>
+      <ErrorBoundary errorType='asdad'>
+        <MainContainer>
+          <Routing/>
+        </MainContainer>
+      </ErrorBoundary>
+    </ErrorProviderWrapper>
   );
 }
 
