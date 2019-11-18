@@ -5,13 +5,15 @@ import { Redirect } from 'react-router-dom';
 //config
 import { ROUTES } from '@routing';
 
+
 export class RouteGuard extends Component {
-  
+
   render = () => {
-    const { isUserLogged, children, location: {pathname} } = this.props;
+    const { isUserLogged, children, location: { pathname } } = this.props;
+    console.log('red', (!isUserLogged && pathname !== '/welcome'))
     return (
-      isUserLogged ?
-        <Redirect to={ROUTES.default.path}/>
+      (!isUserLogged && pathname !== '/welcome') ?
+        <Redirect to={ROUTES.default.path} />
         :
         <>
           {children}

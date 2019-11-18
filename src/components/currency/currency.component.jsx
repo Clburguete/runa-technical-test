@@ -14,9 +14,11 @@ export const CurrencyButton = props => {
     <div
       className="c-currency"
       onClick={handleClick}>
-      <h5 className='c-currency__num'>
-        {value}
-      </h5>
+      {value &&
+        <h5 className='c-currency__num'>
+          {value}
+        </h5>
+      }
       <h6 className='c-currency__curr'>
         {currency.toUpperCase()}
       </h6>

@@ -1,5 +1,8 @@
 import { initialState } from "@store";
 
+const mapSingleValue = (state, singleValue ) => {
+  return {...state, [singleValue]: singleValue }
+}
 const mapUserName = (state, userName) => {
   return {...state, userName};
 }
@@ -31,6 +34,8 @@ const storeReducer = (state = initialState, action) => {
       return mapBTCSpotPrice(state, action.price);
     case 'FETCH_CURRENCIES_SUCCESS':
       return mapCurrencies(state,action.currencies)
+    case 'FETCH_EXCHANGE_RATE_SUCCESS':
+      return mapExchangeRate(state, action.rate)
     default:
       return state;
   }

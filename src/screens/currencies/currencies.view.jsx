@@ -1,11 +1,14 @@
 //vendors
 import React, { useEffect } from 'react';
 
-import { Header } from '@components';
+//components
+import { Header, CurrencyButton } from '@components';
+
+//styles
+import '@styles/grids.css'
 
 export const CurrenciesView = props =>{
-  const { fetchCurrencies, logout, history, userName } = props;
-  console.log(props);
+  const { fetchCurrencies, currencies, logout, history, userName } = props;
   useEffect(() => {
     fetchCurrencies();
   }, [])
@@ -16,7 +19,19 @@ export const CurrenciesView = props =>{
         logout={logout} 
         history={history}
         userName={userName}/>
-      <h3>CurrenciesView</h3>
+      <h1>CurrenciesView</h1>
+      {
+        currencies.length &&
+        <section className='c-grid'>
+          {
+            currencies.map((curr,i) => (
+            <CurrencyButton
+              currency={curr.name}
+              key={`${i}-${curr.id}`}/>
+            ))
+          }
+        </section>
+      }
     </>
   )
 }

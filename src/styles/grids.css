@@ -1,0 +1,9 @@
+.c-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.c-grid * {
+  margin: 8px;
+}

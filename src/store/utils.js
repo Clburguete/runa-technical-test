@@ -24,5 +24,4 @@ const mapDispatchToProps = dispatch => ({
 export {
   mapStateToProps,
   mapDispatchToProps,
-  fetchSpotPrice
 }

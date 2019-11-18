@@ -3,14 +3,20 @@
   flex-direction: column;
 
   height: 80px;
+  max-width: 180px;
   padding:10px;
 
   margin: 10px auto;
 
-  border: 1px solid lightgreen;
-  box-shadow: 0 0 10px lavender;
+  background-color: rgba(144, 199, 144, 0.05);
+  border: 1px solid rgba(144, 238, 144, 0.05);
+  box-shadow: 0 0 20px rgba(188, 188, 230, 0.4);
 
   justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
 .c-currency__num {
@@ -27,4 +33,9 @@
   font-weight: bold;
   text-align: center;
   margin:0;
+}
+
+.c-currency:hover {
+  box-shadow: 0 0 10px lavender;
+  border: 1px solid rgba(144, 238, 144, 0.25);
 }
