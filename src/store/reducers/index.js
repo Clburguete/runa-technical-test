@@ -1,1 +1,1 @@
-export { userName } from './reducers';
+export { storeReducer } from './reducers';

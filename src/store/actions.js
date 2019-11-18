@@ -3,6 +3,12 @@ const handleUserName = userName => ({
   userName
 })
 
+const handleUserSubmit = () => ({
+  type: 'HANDLE_SUBMIT',
+  isUserCreated: true
+})
+
 export {
-  handleUserName
+  handleUserName,
+  handleUserSubmit
 };

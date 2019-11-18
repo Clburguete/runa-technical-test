@@ -10,9 +10,7 @@ export class Input extends Component {
     super(props);
   }
 
-  _handleChange = (_value) => {
-    this.props.handleChange(_value);
-  }
+  _handleChange = (_value) => this.props.handleChange(_value);
 
   render() {
     const {
@@ -27,7 +25,8 @@ export class Input extends Component {
       tabIndex = 0,
       maxLength,
       handleFocus = () => { },
-      handleBlur = () => { }
+      handleBlur = () => { },
+      label = 'Generic Input label'
     } = this.props;
 
 
@@ -35,8 +34,6 @@ export class Input extends Component {
       onlyChars = new RegExp(/^[a-zA-Z]*$/),
       isInvalid = (!onlyChars.test(value));
 
-    console.log('isinvalid', isInvalid)
-    console.log(onlyChars.test('asdasd').toString())
     return (
       <>
         <label 
@@ -45,9 +42,8 @@ export class Input extends Component {
           { label }
         </label>
         <input
-          className='c-input'
+          className={`c-input ${isInvalid ? 'c-input--invalid': ''}`}
           id={id}
-          invalid={isInvalid.toString()}
           maxLength={maxLength}
           value={value}
           name={name}

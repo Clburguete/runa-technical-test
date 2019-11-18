@@ -4,14 +4,17 @@ import React from 'react';
 //config
 import { ROUTES } from './../../config';
 
-export const DashboardView = (props) => {
+//components
+import { NavButton } from './../../components';
 
+export const DashboardView = (props) => {
+  const { userName, spotPrice } = props;
   return (
     <>
-      <h1>Welcome, {props.userName}</h1>
+      <h1>Welcome, {userName}</h1>
       <h3> Please use the links below to navigate through the project.</h3>
       <section>
-        Today's BTC market price is: {props.spotPrice}
+        Today's BTC market price is: {spotPrice}
       </section>
       <section>
         {

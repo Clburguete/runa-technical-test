@@ -4,8 +4,14 @@ import React from 'react';
 //styles
 import './button.css';
 
-export const Button = ({ handleClick, text }) => {
-  const _handleClick = () => handleClick();
+export const Button = props => {
+  const 
+    { handleClick, text } = props,
+    _handleClick = e => {
+      e.preventDefault();
+      console.log(props)
+      handleClick();
+    }
   
   return (
     <button 

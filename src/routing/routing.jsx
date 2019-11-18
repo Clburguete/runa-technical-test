@@ -6,7 +6,7 @@ import { ROUTES } from './../config';
 //components
 import LazyScreen from './lazy-screen';
 
-export const Routing = props => {
+export const Routing = () => {
 
   return (
     <BrowserRouter>
@@ -18,7 +18,7 @@ export const Routing = props => {
               <Route
                 key={`${i}${key}`}
                 path={route.path}
-                render={(props) => <LazyScreen {...props} route={key}/>}
+                render={(routeProps) => <LazyScreen {...routeProps} route={key}/>}
                 />
             )
           })

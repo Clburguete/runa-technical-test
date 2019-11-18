@@ -4,15 +4,22 @@ const mapUserName = (state, userName) => {
   return {...state, userName};
 }
 
-const userName = (state = initialState, action) => {
+const mapUserCreation = (state) => {
+  return {...state, isUserCreated : true}
+}
+
+const storeReducer = (state = initialState, action) => {
+  console.log(action)
   switch (action.type) {
     case 'HANDLE_USERNAME':
       return mapUserName(state, action.userName);
+    case 'HANDLE_SUBMIT':
+      return mapUserCreation(state);
     default:
       return state;
   }
 }
 
 export {
-  userName
+  storeReducer
 }

@@ -2,8 +2,8 @@ export const ROUTES = {
   welcome: {
     path: '/welcome'
   },
-  random: {
-    path: '/random'
+  dashboard: {
+    path: '/dashboard'
   },
   detail: {
     path:'/detail'

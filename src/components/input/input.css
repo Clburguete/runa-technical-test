@@ -12,7 +12,11 @@
   border: 1px solid skyblue;
 }
 
-.c-input:invalid {
+.c-input--invalid {
+  border: 1px solid red;
+}
+
+.c-input--invalid:focus {
   border: 1px solid red;
 }
 

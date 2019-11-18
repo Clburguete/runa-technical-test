@@ -1,8 +1,10 @@
 //vendors
 import React, { useContext } from 'react';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 //store
-import { store } from './store';
+import {
+  store
+} from './store';
 //context
 import { ErrorProviderWrapper, ErrorContext } from './context';
 //guards

@@ -1,2 +1,2 @@
-import UserForm from './user-form';
+import UserForm from './user-form.component';
 export { UserForm };
