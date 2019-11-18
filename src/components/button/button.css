@@ -1,6 +1,12 @@
 .c-button {
   width: 100%;
-  
+
+  padding: 10px;
+  margin: 10px;
+  border: none;
+
   background-color: lightgoldenrodyellow;
   color: black;
+
+  cursor: pointer;
 }

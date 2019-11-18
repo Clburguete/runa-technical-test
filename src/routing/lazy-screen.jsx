@@ -1,4 +1,7 @@
+//vendors
 import React, { Component } from 'react';
+//components
+import { Link } from './../components';
 
 export default class LazyScreen extends Component {
 
@@ -40,11 +43,10 @@ export default class LazyScreen extends Component {
     <>
       {
         route !== 'welcome' &&
-        <b
-          onClick={history.goBack}
-        >
-          Return
-        </b>
+        <Link
+          text={'Return'}
+          handleClick={history.goBack}
+        />
       }
       {screen}
     </>;
