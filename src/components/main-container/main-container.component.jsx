@@ -4,7 +4,10 @@ import React, { useContext } from 'react';
 //context
 import { ErrorContext } from './../../context';
 
-export const MainContainer = props => {
+//styles
+import './main-container.css'
+
+export const MainContainer = ({ children }) => {
   const 
     { errorType } = useContext(ErrorContext),
     hasError = !!errorType,
@@ -15,8 +18,8 @@ export const MainContainer = props => {
     hasError && throwError();
 
   return (
-    <>
-      {props.children}
-    </>
+    <div className='c-main'>
+      {children}
+    </div>
   )
 }

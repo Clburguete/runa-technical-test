@@ -18,7 +18,7 @@ export const Routing = props => {
               <Route
                 key={`${i}${key}`}
                 path={route.path}
-                render={() => <LazyScreen route={key}/>}
+                render={(props) => <LazyScreen {...props} route={key}/>}
                 />
             )
           })

@@ -31,9 +31,23 @@ export default class LazyScreen extends Component {
   }
 
   render() {
-    const { screen } = this.state;
+    const 
+      { screen } = this.state,
+      { history, route } = this.props;
 
-    return screen ? screen : '';
+    console.log('propsss',this.props);
+    return !screen ? '' :
+    <>
+      {
+        route !== 'welcome' &&
+        <b
+          onClick={history.goBack}
+        >
+          Return
+        </b>
+      }
+      {screen}
+    </>;
   }
 
 }

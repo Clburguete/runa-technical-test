@@ -17,9 +17,9 @@ import { MainContainer } from './components';
 const App = () => {
   return (
     <ErrorProviderWrapper>
-      <ErrorBoundary errorType='asdad'>
+      <ErrorBoundary>
         <MainContainer>
-          <Routing/>
+          <Routing />
         </MainContainer>
       </ErrorBoundary>
     </ErrorProviderWrapper>
