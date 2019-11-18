@@ -1,12 +1,12 @@
 //vendors
 import React, { useContext } from 'react';
-
+import { Provider } from 'react-redux';
+//store
+import { store } from './store';
 //context
 import { ErrorProviderWrapper, ErrorContext } from './context';
-
 //guards
 import { ErrorBoundary } from './guards';
-
 //assets
 import logo from './assets';
 
@@ -16,13 +16,15 @@ import { MainContainer } from './components';
 
 const App = () => {
   return (
-    <ErrorProviderWrapper>
-      <ErrorBoundary>
-        <MainContainer>
-          <Routing />
-        </MainContainer>
-      </ErrorBoundary>
-    </ErrorProviderWrapper>
+    <Provider store={store}>
+      <ErrorProviderWrapper>
+        <ErrorBoundary>
+          <MainContainer>
+            <Routing />
+          </MainContainer>
+        </ErrorBoundary>
+      </ErrorProviderWrapper>
+    </Provider>
   );
 }
 

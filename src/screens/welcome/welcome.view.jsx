@@ -1,46 +1,39 @@
 //vendors
 import React, { Component, useContext } from 'react';
 
-//config
-import { ROUTES } from './../../config';
-
 //context
 import { ErrorContext } from './../../context';
 
 //components
-import { NavButton } from './../../components';
+import { 
+  NavButton,
+  Input
+} from './../../components';
 
-export const WelcomeView = ({ history }) => {
+export const WelcomeView = ({ history, userName }) => {
   const { errorType, setErrorType } = useContext(ErrorContext)
   const handleNavigation = target => history.push(target);
 
-  console.log('history', history)
   return (
     <>
       <h1>Welcome!</h1>
-      <h2>A landing page by Carlos Luis Burguete</h2>
+      <h2>A frontend test by Carlos Luis Burguete</h2>
       <section>
         <p>
           <b>Hi there!</b> 
           If you're reading this, it means I was able to complete the technical test within the given timeline. I hope you enjoy my code -
-          use the links below to navigate between routes. Enjoy your stay! :)
+          enter your name to access your dashboard. Enjoy your stay! :)
+        </p>
+        <p>
+
         </p>
       </section>
-      <section>
-        {
-          Object.keys(ROUTES).map((key, i) => {
-            const route = ROUTES[key];
-            return (
-              <NavButton
-                key={`${i}${key}`}
-                text={key}
-                path={route.path}
-                handleClick={history.push}
-                />
-            )
-          })
-          }
-      </section>
+      {
+        !userName &&
+        <section>
+          <Input/>
+        </section>
+      }
     </>
   )
 }

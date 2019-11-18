@@ -1,0 +1,31 @@
+.c-input {
+  width: 100%;
+  max-width: 320px;
+  height: 30px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid lightblue;
+}
+
+.c-input:focus {
+  outline: none;
+  border: 1px solid skyblue;
+}
+
+.c-input:invalid {
+  border: 1px solid red;
+}
+
+.c-input__label {
+  display: block;
+
+  font-size: 14px;
+  color: darkblue;
+}
+
+.c-input__error {
+  display: block;
+  color: red;
+
+  font-size: 14px;
+}

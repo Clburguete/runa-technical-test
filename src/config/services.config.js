@@ -33,7 +33,7 @@ let SERVICES = {
   }
 }
 
-SERVICES = Object.keys.map(key => {
+SERVICES = Object.keys(SERVICES).map(key => {
   const serviceConfig = SERVICES[key];
   serviceConfig.endpoint = `${host}${serviceConfig.endpoint}`
   return serviceConfig;
