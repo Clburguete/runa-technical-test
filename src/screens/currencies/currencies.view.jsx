@@ -1,8 +1,10 @@
 //vendors
 import React, { useEffect } from 'react';
 
+import { Header } from './../../components';
+
 export const CurrenciesView = props =>{
-  const { fetchCurrencies } = props;
+  const { fetchCurrencies, logout, history, userName } = props;
   console.log(props);
   useEffect(() => {
     fetchCurrencies();
@@ -10,6 +12,10 @@ export const CurrenciesView = props =>{
 
   return (
     <>
+      <Header 
+        logout={logout} 
+        history={history}
+        userName={userName}/>
       <h3>CurrenciesView</h3>
     </>
   )

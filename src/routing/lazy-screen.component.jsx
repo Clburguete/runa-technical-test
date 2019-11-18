@@ -40,14 +40,6 @@ export default class LazyScreen extends Component {
 
     return !screen ? '' :
     <>
-      {
-        route !== 'welcome' &&
-        <Link
-          text={'Return'}
-          handleClick={history.goBack}
-        />
-      }
-
       {screen}
     </>;
   }

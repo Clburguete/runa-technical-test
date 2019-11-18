@@ -6,7 +6,7 @@ export const ROUTES = {
     path: '/dashboard'
   },
   currencies: {
-    path:'/currencies'
+    path: '/currencies'
   },
   default: {
     path: '/welcome'

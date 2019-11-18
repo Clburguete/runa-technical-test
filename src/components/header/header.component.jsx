@@ -1,0 +1,50 @@
+//vendors
+import React, { Component } from 'react';
+
+import { ROUTES } from './../../config';
+
+//styles
+import './header.css';
+
+//components
+import { NavButton } from './../nav-button';
+
+export const Header = props => {
+  const {
+    logout,
+    history,
+    userName
+  } = props;
+  console.log(history)
+  return (
+    <nav className='c-navbar'>
+      <NavButton
+        className='c-button--menu'
+        text={'Return'}
+        handleClick={history.goBack}
+      />
+      {
+        Object.keys(ROUTES).map((key, i) => {
+          const route = ROUTES[key];
+          if (key === 'default' || key === 'welcome') return;
+          return (
+            <NavButton
+              key={`${i}${key}`}
+              className='c-button--menu'
+              text={key === 'currencies' ? 'Additional currencies' : key}
+              path={route.path}
+              handleClick={() => history.push(route.path)}
+            />
+          )
+        })
+      }
+      <NavButton
+        className='c-button--menu c-button--logout'
+        text={'Log out'}
+        handleClick={logout}
+      />
+
+      <h5>{userName}</h5>
+    </nav>
+  )
+}

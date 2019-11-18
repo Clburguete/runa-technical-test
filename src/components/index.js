@@ -5,3 +5,4 @@ export { Link } from './link';
 export { Input } from './input';
 export { CurrencyButton } from './currency';
 export { Backdrop } from './backdrop';
+export { Header } from './header';

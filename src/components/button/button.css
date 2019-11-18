@@ -22,10 +22,8 @@
 .c-button--logout {
   background: black;
   color: white;
-  padding: 15px 10px;
-  display: inline-flex;
-  width: unset;
-  margin: 10px;
+  position: relative;
+  right: 0;
 }
 
 .c-button--menu:first-of-type {
@@ -34,6 +32,10 @@
 
 .c-button:hover {
   background-color: rgb(250, 128, 114);
+}
+
+.c-button--logout:hover {
+  background: darkblue;
 }
 
 .c-button:disabled {
