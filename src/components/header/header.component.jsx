@@ -19,7 +19,7 @@ export const Header = props => {
   return (
     <nav className='c-navbar'>
       <NavButton
-        className='c-button--menu'
+        className='c-button--menu c-button--return'
         text={'Return'}
         handleClick={history.goBack}
       />
@@ -44,7 +44,7 @@ export const Header = props => {
         handleClick={logout}
       />
 
-      <h5>{userName}</h5>
+      <h5>{userName.toUpperCase()}</h5>
     </nav>
   )
 }
