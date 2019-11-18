@@ -22,7 +22,7 @@ export const WelcomeView = props => {
 
   return (
     <>
-      <h1>Welcome {isUserCreated && userName}!</h1>
+      <h1>Welcome {isUserCreated && `back ${userName}`}!</h1>
       <h2>A frontend test by Carlos Luis Burguete</h2>
       <section>
         <p>
@@ -39,7 +39,13 @@ export const WelcomeView = props => {
         <>
           <span> Uh-oh... Feeling forgetful? It seems you already created a user</span>
           <br/>
-          <span> Click <b onClick={navigateToDashboard}>here</b>to go back to your dashboard</span>
+          <br/>
+          <span> Click <b
+              style={{cursor: 'pointer'}}
+              onClick={navigateToDashboard}>
+             here 
+            </b> to go back to your dashboard
+            </span>
         </>
         :
         <section>

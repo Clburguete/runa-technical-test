@@ -1,0 +1,16 @@
+.c-currency {
+  display: block;
+  padding:15px;
+  border: 1px solid lightgreen;
+  box-shadow: 0 0 10px lavender;
+}
+
+.c-currency__num {
+  font-weight: 200;
+  text-align: center;
+}
+
+.c-currency__curr {
+  font-weight: bold;
+  text-align: center;
+}

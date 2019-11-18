@@ -20,6 +20,7 @@ export const DashboardView = (props) => {
         {
           Object.keys(ROUTES).map((key, i) => {
             const route = ROUTES[key];
+            if(key === 'default') return;
             return (
               <NavButton
                 key={`${i}${key}`}

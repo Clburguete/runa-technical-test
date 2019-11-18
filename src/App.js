@@ -22,7 +22,7 @@ const App = () => {
       <ErrorProviderWrapper>
         <ErrorBoundary>
           <MainContainer>
-            <Routing />
+            <Routing/>
           </MainContainer>
         </ErrorBoundary>
       </ErrorProviderWrapper>
