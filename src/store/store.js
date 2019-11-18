@@ -1,7 +1,15 @@
 //vendors
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import { createEpicMiddleware } from 'redux-observable';
 
 import { storeReducer } from './reducers';
 import { initialState } from './initial-state';
+import { fetchEpic } from './../services';
 
-export const store = createStore(storeReducer, initialState);
+const observableMiddleware = createEpicMiddleware();
+
+const store = createStore(storeReducer, initialState, applyMiddleware(observableMiddleware));
+
+observableMiddleware.run(fetchEpic);
+
+export { store };

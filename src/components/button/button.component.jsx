@@ -6,16 +6,16 @@ import './button.css';
 
 export const Button = props => {
   const 
-    { handleClick, text } = props,
+    { handleClick, text, disabled } = props,
     _handleClick = e => {
       e.preventDefault();
-      console.log(props)
       handleClick();
     }
   
   return (
     <button 
       className='c-button'
+      disabled={disabled}
       onClick={_handleClick}>
       {text.toUpperCase()}
     </button>

@@ -21,7 +21,7 @@ const App = () => {
     <Provider store={store}>
       <ErrorProviderWrapper>
         <ErrorBoundary>
-          <MainContainer>
+          <MainContainer store={store}>
             <Routing/>
           </MainContainer>
         </ErrorBoundary>

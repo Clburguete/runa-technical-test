@@ -8,7 +8,12 @@ const handleUserSubmit = () => ({
   isUserCreated: true
 })
 
+const fetchSpotPrice = () => ({
+  type: 'FETCH_SPOT_PRICE'
+})
+ 
 export {
   handleUserName,
-  handleUserSubmit
+  handleUserSubmit,
+  fetchSpotPrice
 };

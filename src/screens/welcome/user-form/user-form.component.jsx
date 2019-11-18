@@ -27,8 +27,6 @@ class UserForm extends Component {
       userName
     } = this.props;
 
-  console.log(this.props);
-
     return (
       <form>
         <Input
@@ -37,6 +35,7 @@ class UserForm extends Component {
           handleChange={val => handleChange(val)}
         />
         <Button
+          disabled={!userName}
           text="Let's go!"
           handleClick={this._handleSubmit}
         />

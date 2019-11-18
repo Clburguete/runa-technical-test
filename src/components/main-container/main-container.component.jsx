@@ -7,15 +7,22 @@ import { ErrorContext } from './../../context';
 //styles
 import './main-container.css'
 
-export const MainContainer = ({ children }) => {
+export const MainContainer = ({ children, store }) => {
   const 
     { errorType } = useContext(ErrorContext),
     hasError = !!errorType,
     throwError = () => {
       throw Error('something went wrong!')
     };
+
+    let loading = false;
   
     hasError && throwError();
+
+    store.subscribe(() => {
+      const { isLoading } = store.getState();
+
+    });
 
   return (
     <div className='c-main'>

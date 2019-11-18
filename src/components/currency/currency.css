@@ -1,16 +1,30 @@
 .c-currency {
-  display: block;
-  padding:15px;
+  display: inline-flex;
+  flex-direction: column;
+
+  height: 80px;
+  padding:10px;
+
+  margin: 10px auto;
+
   border: 1px solid lightgreen;
   box-shadow: 0 0 10px lavender;
+
+  justify-content: center;
 }
 
 .c-currency__num {
+  display: block;
+  font-size: 24px;
   font-weight: 200;
   text-align: center;
+  margin:0;
 }
 
 .c-currency__curr {
+  display: block;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
+  margin:0;
 }

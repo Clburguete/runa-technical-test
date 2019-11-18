@@ -27,17 +27,27 @@ let SERVICES = {
     endpoint: 'prices/',
     action: '/sell'
   },
-  GET_MARKER_VALUE: {
+  GET_SPOT_PRICE: {
     endpoint: 'prices/',
-    action: '/spot'
+    action: 'spot'
   }
 }
 
 SERVICES = Object.keys(SERVICES).map(key => {
-  const serviceConfig = SERVICES[key];
-  serviceConfig.endpoint = `${host}${serviceConfig.endpoint}`
-  return serviceConfig;
+  const serviceConfig = {
+    ...SERVICES[key],
+    endpoint: `${host}${SERVICES[key].endpoint}`,
+    options: defaultOptions
+  }
+  return {...serviceConfig, key: key};
+}).reduce((acc, item) => {
+  console.log('obj',acc)
+  console.log('item', item)
+  acc[item.key] = item;
+  return acc
 })
+
+console.log('services',SERVICES)
 
 export default SERVICES;
 

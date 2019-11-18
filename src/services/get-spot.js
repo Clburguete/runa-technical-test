@@ -1,0 +1,19 @@
+import { SERVICES } from './../config';
+
+const { GET_SPOT_PRICE } = SERVICES;
+
+async function fetchSpotPrice () {
+  console.log('request',GET_SPOT_PRICE.endpoint);
+  const
+    response = await fetch(`${GET_SPOT_PRICE.endpoint}${GET_SPOT_PRICE.action}`),
+    dataJson = await response.json();
+  console.log('spot price', dataJson.data.amount);
+    return {
+        type: 'FETCH_SPOT_PRICE_SUCCESS',
+        price: dataJson.data.amount
+    };
+}
+
+export {
+  fetchSpotPrice
+}

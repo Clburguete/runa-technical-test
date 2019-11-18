@@ -18,7 +18,7 @@ export const CurrencyButton = props => {
         {value}
       </h5>
       <h6 className='c-currency__curr'>
-        {currency}
+        {currency.toUpperCase()}
       </h6>
     </div>
   )

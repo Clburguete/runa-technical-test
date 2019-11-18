@@ -1,6 +1,7 @@
 import { 
   handleUserName,
-  handleUserSubmit
+  handleUserSubmit,
+  fetchSpotPrice
 } from "./actions";
 
 const mapStateToProps = state => ({
@@ -11,10 +12,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleChange: val => dispatch(handleUserName(val)),
-  handleSubmit: () => dispatch(handleUserSubmit())
+  handleSubmit: () => dispatch(handleUserSubmit()),
+  fetchSpotPrice: () => dispatch(fetchSpotPrice())
 })
 
 export {
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  fetchSpotPrice
 }
