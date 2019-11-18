@@ -2,10 +2,12 @@
 import React, { useEffect } from 'react';
 
 export const CurrenciesView = props =>{
-  const { fetchSpotPrice } = props;
+  const { fetchCurrencies } = props;
+  console.log(props);
   useEffect(() => {
-    fetchSpotPrice();
+    fetchCurrencies();
   }, [])
+
   return (
     <>
       <h3>CurrenciesView</h3>

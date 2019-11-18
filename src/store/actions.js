@@ -3,6 +3,10 @@ const handleUserName = userName => ({
   userName
 })
 
+const logout = () => ({
+  type: 'LOGOUT'
+})
+
 const handleUserSubmit = () => ({
   type: 'HANDLE_SUBMIT',
   isUserCreated: true
@@ -11,9 +15,15 @@ const handleUserSubmit = () => ({
 const fetchSpotPrice = () => ({
   type: 'FETCH_SPOT_PRICE'
 })
+
+const fetchCurrencies = () => ({
+  type: 'FETCH_CURRENCIES'
+})
  
 export {
   handleUserName,
   handleUserSubmit,
-  fetchSpotPrice
+  fetchSpotPrice,
+  fetchCurrencies,
+  logout
 };

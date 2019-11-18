@@ -43,7 +43,7 @@ SERVICES = Object.keys(SERVICES).map(key => {
 }).reduce((acc, item) => {
   acc[item.key] = item;
   return acc
-})
+},{})
 
 export default SERVICES;
 

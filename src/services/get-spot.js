@@ -1,6 +1,6 @@
 import { SERVICES } from './../config';
 
-const { GET_SPOT_PRICE, GET_CURRENCIES } = SERVICES;
+const { GET_SPOT_PRICE } = SERVICES;
 
 async function fetchSpotPrice () {
   const
@@ -12,18 +12,6 @@ async function fetchSpotPrice () {
     };
 }
 
-async function fetchCurrencies() {
-  const
-    response = await fetch(`${GET_CURRENCIES.endpoint}${GET_CURRENCIES.action}`),
-    dataJson = await response.json();
-    console.log(dataJson);
-  return {
-    type: 'FETCH_CURRENCIES_SUCCESS',
-    currencies: dataJson.data
-  };
-}
-
 export {
-  fetchSpotPrice,
-  fetchCurrencies
+  fetchSpotPrice
 }

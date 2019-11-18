@@ -6,7 +6,7 @@ import './button.css';
 
 export const Button = props => {
   const 
-    { handleClick, text, disabled } = props,
+    { handleClick, text, disabled, className } = props,
     _handleClick = e => {
       e.preventDefault();
       handleClick();
@@ -14,7 +14,7 @@ export const Button = props => {
   
   return (
     <button 
-      className='c-button'
+      className={`c-button ${className}`}
       disabled={disabled}
       onClick={_handleClick}>
       {text.toUpperCase()}

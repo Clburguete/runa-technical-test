@@ -1,7 +1,9 @@
 import { 
   handleUserName,
   handleUserSubmit,
-  fetchSpotPrice
+  fetchSpotPrice,
+  fetchCurrencies,
+  logout
 } from "./actions";
 
 const mapStateToProps = state => ({
@@ -15,7 +17,8 @@ const mapDispatchToProps = dispatch => ({
   handleChange: val => dispatch(handleUserName(val)),
   handleSubmit: () => dispatch(handleUserSubmit()),
   fetchSpotPrice: () => dispatch(fetchSpotPrice()),
-  fetchCurrencies: () => dispatch(fetchCurrencies())
+  fetchCurrencies: () => dispatch(fetchCurrencies()),
+  logout: () => dispatch(logout())
 })
 
 export {
