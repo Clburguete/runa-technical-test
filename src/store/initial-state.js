@@ -1,5 +1,5 @@
 export const initialState = {
-  isUserCreated: false,
+  isUserLogged: false,
   userName: '',
   selectedCurrency: 'USD',
   currencies: [],

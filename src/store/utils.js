@@ -9,7 +9,7 @@ import {
 const mapStateToProps = state => ({
   ...state,
   userName: state.userName,
-  isUserCreated: state.isUserCreated,
+  isUserLogged: state.isUserLogged,
   currencies: state.currencies
 })
 

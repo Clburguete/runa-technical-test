@@ -10,12 +10,9 @@ import {
 class UserForm extends Component {
 
   _handleSubmit = () => {
-    const { handleSubmit, history } = this.props;
-    handleSubmit();
+    const { history } = this.props;
     history.push('/dashboard')
   }
-
-
 
   render = () => {
     const { 

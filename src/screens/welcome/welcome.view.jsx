@@ -11,16 +11,17 @@ export const WelcomeView = props => {
   const { 
     history,
     userName,
-    isUserCreated
+    isUserLogged
   } = props;
-  const navigateToDashboard = () => history.push(ROUTES.dashboard.path);
 
+  const navigateToDashboard = () => history.push(ROUTES.dashboard.path);
+console.log(isUserLogged)
   return (
     <>
-      <h1>Welcome {isUserCreated && `back ${userName}`}!</h1>
+      <h1>Welcome {isUserLogged && `back ${userName}`}!</h1>
       <h2>A frontend test by Carlos Luis Burguete</h2>
       {
-        isUserCreated ?
+        isUserLogged ?
         <>
           <span> Uh-oh... Feeling forgetful? It looks like you already created a user</span>
           <br/>

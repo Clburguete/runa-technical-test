@@ -7,7 +7,7 @@ const mapUserName = (state, userName) => {
 const mapLogout = () => initialState;
 
 const mapUserCreation = (state) => {
-  return {...state, isUserCreated : true};
+  return {...state, isUserLogged : true};
 }
 
 const mapBTCSpotPrice = (state, spotPrice) => {
