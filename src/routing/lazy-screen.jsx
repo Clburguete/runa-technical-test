@@ -47,6 +47,7 @@ export default class LazyScreen extends Component {
           handleClick={history.goBack}
         />
       }
+
       {screen}
     </>;
   }

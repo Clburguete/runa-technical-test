@@ -1,2 +1,1 @@
-import fetchEpic from './utils';
-export { fetchEpic };
+export { fetchSpotEpic, fetchCurrenciesEpic } from './epics';

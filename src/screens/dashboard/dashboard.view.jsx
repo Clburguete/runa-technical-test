@@ -11,7 +11,7 @@ import {
 } from './../../components';
 
 export const DashboardView = (props) => {
-  const { userName, spotPrice, history, fetchSpotPrice } = props;
+  const { userName, selectedCurrency, spotPrice, history, fetchSpotPrice } = props;
 
   useEffect(() => {
     fetchSpotPrice();
@@ -25,13 +25,13 @@ export const DashboardView = (props) => {
         <h5>Today's Bitcoin market price</h5>
         <CurrencyButton
         value={spotPrice}
-        currency="usd"/>
+          currency={selectedCurrency}/>
       </section>
       <section>
         {
           Object.keys(ROUTES).map((key, i) => {
             const route = ROUTES[key];
-            if(key === 'default') return;
+            if(key === 'default' || key === 'welcome') return;
             return (
               <NavButton
                 key={`${i}${key}`}

@@ -41,13 +41,9 @@ SERVICES = Object.keys(SERVICES).map(key => {
   }
   return {...serviceConfig, key: key};
 }).reduce((acc, item) => {
-  console.log('obj',acc)
-  console.log('item', item)
   acc[item.key] = item;
   return acc
 })
-
-console.log('services',SERVICES)
 
 export default SERVICES;
 
