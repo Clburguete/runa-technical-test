@@ -32,6 +32,7 @@ class UserForm extends Component {
           handleChange={val => handleChange(val)}
         />
         <Button
+          className='c-button--login'
           disabled={!userName}
           text={"Let's go!"}
           handleClick={this._handleSubmit}
