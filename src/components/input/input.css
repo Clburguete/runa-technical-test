@@ -3,8 +3,10 @@
   max-width: 320px;
   height: 30px;
   margin: 10px auto;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   border: 1px solid lightblue;
+  border-radius: 30px;
+  font-size: 16px;
 }
 
 .c-input:focus {
@@ -22,7 +24,7 @@
 
 .c-input__label {
   display: block;
-
+  padding-left: 22px;
   font-size: 14px;
   color: white;
 }

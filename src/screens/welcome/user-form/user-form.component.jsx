@@ -15,11 +15,19 @@ class UserForm extends Component {
     history.push('/dashboard');
   }
 
+  _handleChange = val => {
+    const { handleChange } = this.props;
+    handleChange(val);
+  }
+
   render = () => {
     const {
       handleChange,
       userName
     } = this.props;
+
+    const validityRegex = /^[a-zA-Z]*$/;
+    const isValidUserName = ((new RegExp(validityRegex)).test(userName))
 
     return (
       <form>
@@ -28,12 +36,13 @@ class UserForm extends Component {
           label={'Please enter your username'}
           value={userName}
           name={'username'}
+          isValid={isValidUserName}
           validityRegex={/^[a-zA-Z]*$/}
           handleChange={val => handleChange(val)}
         />
         <Button
           className='c-button--login'
-          disabled={!userName}
+          disabled={!isValidUserName}
           text={"Let's go!"}
           handleClick={this._handleSubmit}
         />

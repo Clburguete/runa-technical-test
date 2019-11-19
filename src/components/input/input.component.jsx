@@ -21,12 +21,10 @@ export const Input = props => {
     handleFocus,
     handleBlur,
     label,
-    validityFunc,
-    validityRegex
+    isValid
   } = props;
 
 
-  const isInvalid = (!(new RegExp(validityRegex)).test(value)) || validityFunc(value);
 
   return (
     <>
@@ -36,7 +34,7 @@ export const Input = props => {
         {label}
       </label>
       <input
-        className={`c-input ${isInvalid ? 'c-input--invalid' : ''}`}
+        className={`c-input ${!isValid ? 'c-input--invalid' : ''}`}
         id={id}
         maxLength={maxLength}
         value={value}
@@ -50,7 +48,7 @@ export const Input = props => {
         onBlur={handleBlur}
       />
       {
-        isInvalid &&
+        !isValid &&
         <span className='c-input__error'>
           {errorMessage}
         </span>
@@ -73,6 +71,4 @@ Input.defaultProps = {
   handleFocus: () => { },
   handleBlur: () => { },
   label: 'Generic Input label',
-  validityFunc: () => { },
-  validityRegex: /[\s\S]*/
 }
