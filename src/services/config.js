@@ -12,12 +12,12 @@ const defaultOptions = {
 
 const host = 'https://api.coinbase.com/v2/';
 
-let SERVICES = {
+const SERVICES = {
   GET_CURRENCIES: {
     endpoint: 'currencies'
   },
   GET_EXCHANGE_RATES: {
-    endpoint: 'exchange-rates/currency='
+    endpoint: 'exchange-rates?currency='
   },
   GET_BUY_PRICE: {
     endpoint: 'prices/',
@@ -33,17 +33,20 @@ let SERVICES = {
   }
 }
 
-SERVICES = Object.keys(SERVICES).map(key => {
-  const serviceConfig = {
-    ...SERVICES[key],
-    endpoint: `${host}${SERVICES[key].endpoint}`,
-    options: defaultOptions
-  }
-  return {...serviceConfig, key: key};
-}).reduce((acc, item) => {
-  acc[item.key] = item;
-  return acc
-},{})
+const mapServices = servicesArr => {
+  return Object.keys(servicesArr).map(key => {
+    const serviceConfig = {
+      ...servicesArr[key],
+      endpoint: `${host}${servicesArr[key].endpoint}`,
+      options: defaultOptions
+    }
+    return { ...serviceConfig, key: key };
+  }).reduce((acc, item) => {
+    acc[item.key] = item;
+    return acc
+  }, {})
+}
 
-export default SERVICES;
+
+export default mapServices(SERVICES);
 

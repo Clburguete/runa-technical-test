@@ -8,18 +8,28 @@ export const CurrencyButton = props => {
   const {
     value,
     currency,
-    handleClick = () => {}
+    additionalClass,
+    handleClick
   } = props;
   return(
     <div
-      className="c-currency"
+      className={`c-currency ${additionalClass}`}
       onClick={handleClick}>
-      <h5 className='c-currency__num'>
-        {value}
-      </h5>
+      {value &&
+        <h5 className='c-currency__num'>
+          {value}
+        </h5>
+      }
       <h6 className='c-currency__curr'>
         {currency.toUpperCase()}
       </h6>
     </div>
   )
+}
+
+CurrencyButton.defaultProps = {
+  value: '',
+  currency:'',
+  additionalClass:'',
+  handleClick : () => { }
 }

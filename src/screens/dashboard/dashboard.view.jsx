@@ -1,62 +1,52 @@
 //vendors
 import React, { useEffect } from 'react';
 
-//config
-import { ROUTES } from './../../config';
-
 //components
 import {
-  NavButton,
-  CurrencyButton
-} from './../../components';
+  CurrencyButton,
+  Row,
+  Header
+} from '@components';
 
 export const DashboardView = (props) => {
   const { 
     userName,
     selectedCurrency,
     spotPrice,
-    history,
+    buyPrice,
     fetchSpotPrice,
-    logout
+    fetchBuyPrice,
+    history
   } = props;
+
+  console.log(buyPrice)
+  const handleClick = currId => history.push(`/currency/${currId}`)
 
   useEffect(() => {
     fetchSpotPrice();
-  }, [])
+    fetchBuyPrice(selectedCurrency);
+  }, [selectedCurrency])
 
   return (
     <>
-      <nav className='c-navbar'>
-        {
-          Object.keys(ROUTES).map((key, i) => {
-            const route = ROUTES[key];
-            if (key === 'default' || key === 'welcome') return;
-            return (
-              <NavButton
-                key={`${i}${key}`}
-                className='c-button--menu o-logout'
-                text={key === 'currencies' ? 'Additional currencies' : key}
-                path={route.path}
-                handleClick={() => history.push(route.path)}
-              />
-            )
-          }) 
-        }
-        <NavButton
-          className='c-button--menu'
-          text={'Log out'}
-          handleClick={logout}
-        />
-      </nav>
+      <Header/>
       <h1>Welcome, {userName}</h1>
-      <h3> Please use the links below to navigate through the project.</h3>
-      <section>
+      <h3> Please use the links above to navigate through the project.</h3>
+      <Row>
         <h5>Today's Bitcoin market price</h5>
+        <h6>Click to check USD exchange rates.</h6>
         <CurrencyButton
-        value={spotPrice}
-          currency={selectedCurrency}/>
-      </section>
-
+          handleClick={() => handleClick(selectedCurrency)}
+          value={spotPrice}
+          currency={'USD'}/>
+        <h5>This is the current buy price for your selected currency</h5>
+        <CurrencyButton
+          // handleClick={() => handleClick(selectedCurrency)}
+          value={buyPrice}
+          currency={selectedCurrency} />
+      </Row>
     </>
   )
 }
+
+

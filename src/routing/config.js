@@ -5,8 +5,11 @@ export const ROUTES = {
   dashboard: {
     path: '/dashboard'
   },
-  currencies: {
-    path:'/currencies'
+  settings: {
+    path: '/settings'
+  },
+  currency: {
+    path: '/currency/:id'
   },
   default: {
     path: '/welcome'

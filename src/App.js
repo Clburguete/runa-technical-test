@@ -1,16 +1,14 @@
 //vendors
-import React, { useContext } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 //store
 import {
   store
 } from './store';
 //context
-import { ErrorProviderWrapper, ErrorContext } from './context';
+import { ErrorProviderWrapper } from './context';
 //guards
 import { ErrorBoundary } from './guards';
-//assets
-import logo from './assets';
 
 //components
 import { Routing } from './routing';

@@ -1,9 +1,13 @@
 export const initialState = {
-  isUserCreated: false,
-  userName: '',
-  selectedCurrency: 'USD',
-  currencies: [],
-  buyPrice: undefined,
-  sellPrice: undefined,
-  spotPrice: undefined,
+  currency: {
+    selectedCurrency: 'USD',
+    currencies: [],
+    exchangeRates: [],
+    spotPrice: undefined,
+    buyPrice: undefined
+  },
+  userForm: {
+    isUserLogged: false,
+    userName: '',
+  }
 }

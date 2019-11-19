@@ -1,42 +1,49 @@
 //vendors
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-
-//config
-import { ROUTES } from './../../../config'
 
 //components
 import { 
   Input,
   Button
-} from './../../../components';
+} from '@components';
 
 class UserForm extends Component {
 
   _handleSubmit = () => {
-    const { handleSubmit, history } = this.props;
+    const { history, handleSubmit } = this.props;
     handleSubmit();
-    history.push('/dashboard')
+    history.push('/dashboard');
+  }
+
+  _handleChange = val => {
+    const { handleChange } = this.props;
+    handleChange(val);
   }
 
   render = () => {
-    const { 
+    const {
       handleChange,
-      handleSubmit,
       userName
     } = this.props;
+
+    const validityRegex = /^[a-zA-Z]*$/;
+    const isValidUserName = ((new RegExp(validityRegex)).test(userName))
 
     return (
       <form>
         <Input
-          label='Please enter your username'
+          errorMessage={'Please double check your username. Only regular characters are allowed'}
+          label={'Please enter your username'}
           value={userName}
+          name={'username'}
+          isValid={isValidUserName}
+          validityRegex={/^[a-zA-Z]*$/}
           handleChange={val => handleChange(val)}
         />
         <Button
-          disabled={!userName}
-          text="Let's go!"
+          className='c-button--login'
+          disabled={!userName || !isValidUserName}
+          text={"Let's go!"}
           handleClick={this._handleSubmit}
         />
       </form>

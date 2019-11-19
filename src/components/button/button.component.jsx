@@ -21,3 +21,10 @@ export const Button = props => {
     </button>
   )
 }
+
+Button.defaultProps = {
+  handleClick: () => {},
+  disabled: false,
+  text: '',
+  className: ''
+}

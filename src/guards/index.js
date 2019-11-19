@@ -1,4 +1,4 @@
-import RouteGuard from './user';
+import RouteGuard from './route';
 import { ErrorBoundary } from './error';
 
 export { 

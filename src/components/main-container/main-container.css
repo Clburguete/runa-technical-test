@@ -1,4 +1,11 @@
 .c-main {
-  height: 100%;
-  padding: 60px;
+  padding: 80px 60px;
+}
+
+
+@media (min-width: 540) {
+  .c-main {
+    height: 100%;
+    padding: 60px;
+  }
 }

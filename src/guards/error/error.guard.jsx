@@ -1,10 +1,13 @@
 //vendors
 import React, { Component } from 'react';
 
+import { ROUTES } from '@routing';
+
+import { Error } from '@components';
+
 export class ErrorBoundary extends Component {
 
   static getDerivedStateFromError(error) {
-    console.log('get derived error ', error);
     return {
       error: true,
     };
@@ -16,16 +19,17 @@ export class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.log('error', error);
-    console.log('errorinfo', errorInfo);
+    // You can also log the error to an error reporting service
   }
 
+  navToDashboard = () => this.props.history.push(ROUTES.dashboard.path)
+  
   render() {
-    const { errorType, children } = this.props;
+    const { children } = this.props;
 
     if (this.state.error) {
       return (
-        <h2>This is error</h2>
+        <Error/>
       )
     }
 
