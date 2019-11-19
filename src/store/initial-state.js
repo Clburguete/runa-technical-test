@@ -4,6 +4,7 @@ export const initialState = {
     currencies: [],
     exchangeRates: [],
     spotPrice: undefined,
+    buyPrice: undefined
   },
   userForm: {
     isUserLogged: false,

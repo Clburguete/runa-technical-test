@@ -1,6 +1,8 @@
 //vendors
 import React, { Component } from 'react';
 
+import { ROUTES } from '@routing';
+
 import { Error } from '@components';
 
 export class ErrorBoundary extends Component {

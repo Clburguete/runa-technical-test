@@ -9,19 +9,25 @@ import {
   Button
 } from '@components';
 
+import { initialState } from '@store';
+
 export const DashboardView = (props) => {
   const { 
     userName,
     selectedCurrency,
     spotPrice,
+    buyPrice,
     fetchSpotPrice,
+    fetchBuyPrice,
     history
   } = props;
 
+  console.log(buyPrice)
   const handleClick = currId => history.push(`/currency/${currId}`)
 
   useEffect(() => {
     fetchSpotPrice();
+    fetchBuyPrice(selectedCurrency);
   }, [selectedCurrency])
 
   return (
@@ -34,7 +40,11 @@ export const DashboardView = (props) => {
         <CurrencyButton
           handleClick={() => handleClick(selectedCurrency)}
           value={spotPrice}
-          currency={selectedCurrency}/>
+          currency={'USD'}/>
+        <CurrencyButton
+          // handleClick={() => handleClick(selectedCurrency)}
+          value={buyPrice}
+          currency={selectedCurrency} />
       </Row>
     </>
   )

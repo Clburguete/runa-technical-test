@@ -1,9 +1,6 @@
 //vendors
 import React, { useEffect } from 'react';
 
-//config
-import { ROUTES } from '@routing';
-
 //components
 import { Header, CurrencyButton } from '@components';
 
@@ -11,7 +8,7 @@ import { Header, CurrencyButton } from '@components';
 import '@styles/grids.css'
 
 export const SettingsView = props =>{
-  const {  selectedCurrency, fetchCurrencies, currencies, logout, history, userName, selectDefaultCurr } = props;
+  const {  selectedCurrency, fetchCurrencies, currencies, history, userName, selectDefaultCurr } = props;
   useEffect(() => {
     !currencies.length && fetchCurrencies();
   }, [])

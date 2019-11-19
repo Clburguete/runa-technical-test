@@ -1,7 +1,5 @@
 //vendors
-import React, { Component } from 'react';
-
-import { ROUTES } from '@routing';
+import React from 'react';
 
 //components
 import {

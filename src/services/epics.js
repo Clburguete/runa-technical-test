@@ -5,6 +5,7 @@ import { filter, mergeMap, catchError } from 'rxjs/operators';
 import { fetchSpotPrice } from './get-spot';
 import { fetchCurrencies } from './get-currencies';
 import { fetchExchangeRate } from './get-exchange';
+import { fetchBuyPrice } from './get-buy-price';
 
 const fetchSpotEpic = action$ => {
   return action$.pipe(
@@ -27,6 +28,14 @@ const fetchExchangeEpic = action$ => {
     filter(action => action.type === "FETCH_EXCHANGE_RATE"),
     mergeMap( fetchExchangeRate ),
     catchError(err => {throw new Error()})
+  )
+}
+
+const fetchBuyEpic = action$ => {
+  return action$.pipe(
+    filter(action => action.type === "FETCH_BUY"),
+    mergeMap(fetchBuyPrice),
+    catchError(err => { throw new Error() })
   )
 }
 
