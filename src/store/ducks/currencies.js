@@ -13,7 +13,8 @@ const
   FETCH_EXCHANGE_RATE_SUCCESS = "FETCH_EXCHANGE_RATE_SUCCESS",
   SELECT_DEFAULT_CURRENCY = "SELECT_DEFAULT_CURRENCY",
   FETCH_BUY_PRICE = "FETCH_BUY_PRICE",
-  FETCH_BUY_PRICE_SUCCESS = "FETCH_BUY_PRICE_SUCCESS";
+  FETCH_BUY_PRICE_SUCCESS = "FETCH_BUY_PRICE_SUCCESS",
+  FETCH_ERROR = "FETCH_ERROR";
 
 export const getSpotPrice = () => ({
   type: FETCH_SPOT_PRICE
@@ -36,6 +37,10 @@ export const setDefaultCurr = selectedCurrency => ({
 export const getExchangeRates = currencyId => ({
   type: FETCH_EXCHANGE_RATE,
   currencyId
+})
+
+export const getError = () => ({
+  type: FETCH_ERROR
 })
 
 export const fetchSpotEpic = action$ => {
@@ -82,6 +87,9 @@ const reducer = (state = initialState, action) => {
       return {...state, selectedCurrency : action.selectedCurrency}
     case FETCH_BUY_PRICE_SUCCESS:
       return {...state, buyPrice: action.price }
+    case FETCH_ERROR:
+      throw new Error();
+      return {...state};
     default:
       return state;
   }

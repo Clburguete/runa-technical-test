@@ -40,6 +40,7 @@ export const DashboardView = (props) => {
           currency={'USD'}/>
         <h5>This is the current buy price for your selected currency</h5>
         <CurrencyButton
+          additionalClass='--no-hover'
           // handleClick={() => handleClick(selectedCurrency)}
           value={buyPrice}
           currency={selectedCurrency} />

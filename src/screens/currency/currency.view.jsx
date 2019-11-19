@@ -36,7 +36,7 @@ export const CurrencyView = (props) => {
           value={1}
           currency={currencyId}/>
       </Row>
-      <Row>
+      <Row className='c-grid'>
 
         {
           !!exchangeRates &&
