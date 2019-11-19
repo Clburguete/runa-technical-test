@@ -29,8 +29,6 @@ class UserForm extends Component {
     const validityRegex = /^[a-zA-Z]*$/;
     const isValidUserName = ((new RegExp(validityRegex)).test(userName))
 
-    console.log('username', userName);
-    console.log('!!userName', !!userName)
     return (
       <form>
         <Input

@@ -16,7 +16,12 @@ export class ErrorBoundary extends Component {
     this.state = { error: null };
   }
 
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+  }
+
   navToDashboard = () => this.props.history.push(ROUTES.dashboard.path)
+  
   render() {
     const { children } = this.props;
 

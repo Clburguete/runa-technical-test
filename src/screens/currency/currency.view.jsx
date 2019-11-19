@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 //components
 import {
   CurrencyButton,
+  Row,
   Header
 } from '@components';
 
@@ -29,11 +30,13 @@ export const CurrencyView = (props) => {
       <Header/>
       <h1>There you go! Take a look at today's exchange rates</h1>
       <h4>Click on any of the other currencies to check their rates! :)</h4>
+      <Row>
       <h5>Selected currency: {currencyId.toUpperCase()}</h5>
-      <section className='c-grid'>
         <CurrencyButton
           value={1}
           currency={currencyId}/>
+      </Row>
+      <Row>
 
         {
           !!exchangeRates &&
@@ -51,7 +54,7 @@ export const CurrencyView = (props) => {
             )
           })
         }
-      </section>
+      </Row>
 
     </>
   )
