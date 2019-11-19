@@ -24,8 +24,9 @@ export const SettingsView = props =>{
   return (
     <>
       <Header/>
-      <h1>Change your default currency</h1>
+      <h1>Available currencies</h1>
 
+      <h2>Click on any of the buttons to change your default currency and see their exchange rates</h2>
       <h4>{userName.toUpperCase()}, your current default currency is {selectedCurrency}</h4>
 
       {

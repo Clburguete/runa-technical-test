@@ -5,11 +5,8 @@ import React, { useEffect } from 'react';
 import {
   CurrencyButton,
   Row,
-  Header,
-  Button
+  Header
 } from '@components';
-
-import { initialState } from '@store';
 
 export const DashboardView = (props) => {
   const { 
