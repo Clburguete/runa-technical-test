@@ -19,20 +19,17 @@ export const DashboardView = (props) => {
 
   useEffect(() => {
     fetchSpotPrice();
-  }, [])
+  }, [selectedCurrency])
 
   return (
     <>
-      <Header 
-        logout={logout} 
-        history={history} 
-        userName={userName}/>
+      <Header/>
       <h1>Welcome, {userName}</h1>
       <h3> Please use the links above to navigate through the project.</h3>
       <section>
         <h5>Today's Bitcoin market price</h5>
         <CurrencyButton
-        value={spotPrice}
+          value={spotPrice}
           currency={selectedCurrency}/>
       </section>
 

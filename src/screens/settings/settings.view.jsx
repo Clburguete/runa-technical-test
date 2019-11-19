@@ -21,10 +21,7 @@ export const SettingsView = props =>{
   }
   return (
     <>
-      <Header 
-        logout={logout} 
-        history={history}
-        userName={userName}/>
+      <Header/>
       <h1>Change your default currency</h1>
 
       <h4>{userName.toUpperCase()}, your current default currency is {selectedCurrency}</h4>

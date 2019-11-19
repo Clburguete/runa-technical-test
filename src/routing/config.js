@@ -5,12 +5,6 @@ export const ROUTES = {
   dashboard: {
     path: '/dashboard'
   },
-  currencies: {
-    path: '/currencies'
-  },
-  exchange: {
-    path: '/exchange'
-  },
   settings: {
     path: '/settings'
   },
