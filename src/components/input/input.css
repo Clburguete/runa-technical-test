@@ -30,7 +30,9 @@
 .c-input__error {
   display: block;
   color: red;
-
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.4);
   font-weight: bold;
   font-size: 14px;
+  border-radius: 14px;
 }

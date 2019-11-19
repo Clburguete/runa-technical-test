@@ -16,8 +16,13 @@ export const SettingsView = props =>{
     !currencies.length && fetchCurrencies();
   }, [])
 
+  const navToDetail = id => {
+    history.push(`/currency/${id}`);
+  }
+
   const _selectDefaultCurr = currencyID => {
-    selectDefaultCurr(currencyID)
+    selectDefaultCurr(currencyID);
+    navToDetail(currencyID);
   }
   return (
     <>

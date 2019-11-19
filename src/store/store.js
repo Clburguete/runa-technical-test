@@ -10,14 +10,13 @@ import {
 import { initialState } from './initial-state';
 
 
-const { fetchCurrenciesEpic, fetchSpotEpic, fetchExchangeEpic } = currencyReducer;
 const 
+  { fetchCurrenciesEpic, fetchSpotEpic, fetchExchangeEpic } = currencyReducer,
   observableMiddleware = createEpicMiddleware(),
   rootEpics = combineEpics(fetchCurrenciesEpic, fetchSpotEpic, fetchExchangeEpic),
-  rootReducer = combineReducers({ currency : currencyReducer.default, userForm: userFormReducer.default});
+  rootReducer = combineReducers({ currency : currencyReducer.default, userForm: userFormReducer.default}),
+  store = createStore(rootReducer, initialState, applyMiddleware(observableMiddleware));
 
-console.log('root', rootReducer)
-const store = createStore(rootReducer, initialState, applyMiddleware(observableMiddleware));
 observableMiddleware.run(rootEpics);
 
 export { store };

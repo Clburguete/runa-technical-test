@@ -8,6 +8,9 @@ export const ROUTES = {
   settings: {
     path: '/settings'
   },
+  currency: {
+    path: '/currency/:id'
+  },
   default: {
     path: '/welcome'
   }

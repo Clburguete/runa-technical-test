@@ -14,7 +14,7 @@
   justify-content: space-between;
 
   /* background: rgba(255, 255, 255, 0.4); */
-  background-image: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  background-image: linear-gradient( rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
 
 @media (min-width: 600px) {

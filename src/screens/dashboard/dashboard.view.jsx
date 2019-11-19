@@ -12,9 +12,7 @@ export const DashboardView = (props) => {
     userName,
     selectedCurrency,
     spotPrice,
-    history,
-    fetchSpotPrice,
-    logout
+    fetchSpotPrice
   } = props;
 
   useEffect(() => {

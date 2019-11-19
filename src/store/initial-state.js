@@ -2,8 +2,7 @@ export const initialState = {
   currency: {
     selectedCurrency: 'USD',
     currencies: [],
-    buyPrice: undefined,
-    sellPrice: undefined,
+    exchangeRates: [],
     spotPrice: undefined,
   },
   userForm: {

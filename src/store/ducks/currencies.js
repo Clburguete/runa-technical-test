@@ -15,16 +15,21 @@ const
   SELECT_DEFAULT_CURRENCY = "SELECT_DEFAULT_CURRENCY";
 
 export const getSpotPrice = () => ({
-  type: 'FETCH_SPOT_PRICE'
+  type: FETCH_SPOT_PRICE
 })
 
 export const getCurrencies = () => ({
-  type: 'FETCH_CURRENCIES'
+  type: FETCH_CURRENCIES
 })
 
 export const setDefaultCurr = selectedCurrency => ({
-  type: "SELECT_DEFAULT_CURRENCY",
+  type: SELECT_DEFAULT_CURRENCY,
   selectedCurrency
+})
+
+export const getExchangeRates = currencyId => ({
+  type: FETCH_EXCHANGE_RATE,
+  currencyId
 })
 
 export const fetchSpotEpic = action$ => {
@@ -46,7 +51,7 @@ export const fetchCurrenciesEpic = action$ => {
 export const fetchExchangeEpic = action$ => {
   return action$.pipe(
     filter(action => action.type === FETCH_EXCHANGE_RATE),
-    mergeMap(action => fetchExchangeRate(action.exchangeCurr)),
+    mergeMap(action => fetchExchangeRate(action.currencyId)),
     catchError(err => { throw new Error() })
   )
 }
@@ -58,7 +63,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_CURRENCIES_SUCCESS:
       return {...state, currencies : action.currencies};
     case FETCH_EXCHANGE_RATE_SUCCESS:
-      return {...state, exchangeRate: action.rate};
+      return {...state, exchangeRates: action.rate};
     case SELECT_DEFAULT_CURRENCY:
       return {...state, selectedCurrency : action.selectedCurrency}
     default:

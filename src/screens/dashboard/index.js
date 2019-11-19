@@ -1,6 +1,5 @@
 //vendors
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 import { DashboardView } from './dashboard.view';
 
@@ -14,8 +13,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchSpotPrice: () => dispatch(CURRENCY_DUCK.getSpotPrice()),
-  logout: () => dispatch(USER_DUCK.logout())
+  fetchSpotPrice: () => dispatch(CURRENCY_DUCK.getSpotPrice())
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DashboardView));
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardView);

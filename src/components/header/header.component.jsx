@@ -14,7 +14,6 @@ export const Header = props => {
     logout,
     history
   } = props;
-  console.log(history)
   return (
     <nav className='c-navbar'>
       <NavButton
@@ -25,7 +24,7 @@ export const Header = props => {
       {
         Object.keys(ROUTES).map((key, i) => {
           const route = ROUTES[key];
-          if (key === 'default' || key === 'welcome') return false;
+          if (key === 'default' || key === 'welcome' || key === "currency") return false;
           return (
             <NavButton
               key={`${i}${key}`}
@@ -42,7 +41,7 @@ export const Header = props => {
         text={'Log out'}
         handleClick={logout}
       />
-      
+
     </nav>
   )
 }

@@ -7,7 +7,6 @@ import { MainContainer } from '@components';
 export class ErrorBoundary extends Component {
 
   static getDerivedStateFromError(error) {
-    console.log('get derived error ', error);
     return {
       error: true,
     };
@@ -16,11 +15,6 @@ export class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    console.log('error', error);
-    console.log('errorinfo', errorInfo);
   }
 
   render() {
