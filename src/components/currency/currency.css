@@ -39,3 +39,10 @@
   box-shadow: 0 0 10px lavender;
   border: 1px solid rgba(144, 238, 144, 0.25);
 }
+
+.c-currency--small {
+  height: 40px;
+
+  font-size: 14px;
+
+}

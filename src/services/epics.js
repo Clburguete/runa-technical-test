@@ -24,8 +24,8 @@ const fetchCurrenciesEpic = action$ => {
 
 const fetchExchangeEpic = action$ => {
   return action$.pipe(
-    filteer(action => action.type === "FETCH_EXCHANGE_RATE"),
-    mergeMap( fetchExchange ),
+    filter(action => action.type === "FETCH_EXCHANGE_RATE"),
+    mergeMap( fetchExchangeRate ),
     catchError(err => {throw new Error()})
   )
 }

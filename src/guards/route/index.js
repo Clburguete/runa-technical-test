@@ -2,6 +2,14 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { RouteGuard } from './route.guard';
-import { mapStateToProps, mapDispatchToProps } from '@store';
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RouteGuard));
+
+const mapStateToProps = state => {
+  console.log(state);
+  return ({
+    isUserLogged: state.userForm.isUserLogged
+  })
+}
+
+
+export default withRouter(connect(mapStateToProps)(RouteGuard));

@@ -10,30 +10,33 @@ import { Header, CurrencyButton } from '@components';
 //styles
 import '@styles/grids.css'
 
-export const CurrenciesView = props =>{
-  const { fetchCurrencies, currencies, logout, history, userName } = props;
+export const SettingsView = props =>{
+  const {  selectedCurrency, fetchCurrencies, currencies, logout, history, userName, selectDefaultCurr } = props;
   useEffect(() => {
-    fetchCurrencies();
+    !currencies.length && fetchCurrencies();
   }, [])
 
-  console.log('propcsadadss',props)
-  const navigateToDetail = currenciID => {
-    history.push(ROUTES.exchange.path);
+  const _selectDefaultCurr = currencyID => {
+    selectDefaultCurr(currencyID)
   }
-
   return (
     <>
       <Header 
         logout={logout} 
         history={history}
         userName={userName}/>
-      <h1>CurrenciesView</h1>
+      <h1>Change your default currency</h1>
+
+      <h4>{userName.toUpperCase()}, your current default currency is {selectedCurrency}</h4>
+
       {
         currencies.length &&
         <section className='c-grid'>
           {
             currencies.map((curr,i) => (
             <CurrencyButton
+              additionalClass='c-currency--small'
+              handleClick={() => _selectDefaultCurr(curr.id)}
               currency={curr.name}
               key={`${i}-${curr.id}`}/>
             ))

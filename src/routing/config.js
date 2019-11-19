@@ -8,6 +8,12 @@ export const ROUTES = {
   currencies: {
     path: '/currencies'
   },
+  exchange: {
+    path: '/exchange'
+  },
+  settings: {
+    path: '/settings'
+  },
   default: {
     path: '/welcome'
   }

@@ -12,8 +12,7 @@ import { NavButton } from '@components';
 export const Header = props => {
   const {
     logout,
-    history,
-    userName
+    history
   } = props;
   console.log(history)
   return (
@@ -43,8 +42,7 @@ export const Header = props => {
         text={'Log out'}
         handleClick={logout}
       />
-
-      <h5>{userName.toUpperCase()}</h5>
+      
     </nav>
   )
 }

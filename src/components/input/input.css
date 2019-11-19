@@ -24,12 +24,13 @@
   display: block;
 
   font-size: 14px;
-  color: darkblue;
+  color: white;
 }
 
 .c-input__error {
   display: block;
   color: red;
 
+  font-weight: bold;
   font-size: 14px;
 }

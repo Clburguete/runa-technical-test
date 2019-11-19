@@ -14,8 +14,9 @@ export const WelcomeView = props => {
     isUserLogged
   } = props;
 
+
   const navigateToDashboard = () => history.push(ROUTES.dashboard.path);
-console.log(isUserLogged)
+console.log('props.', props)
   return (
     <>
       <h1>Welcome {isUserLogged && `back ${userName}`}!</h1>

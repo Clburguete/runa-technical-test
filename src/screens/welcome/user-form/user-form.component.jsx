@@ -16,7 +16,7 @@ class UserForm extends Component {
   }
 
   render = () => {
-    const { 
+    const {
       handleChange,
       userName
     } = this.props;
