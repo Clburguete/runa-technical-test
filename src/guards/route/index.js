@@ -5,7 +5,6 @@ import { RouteGuard } from './route.guard';
 
 
 const mapStateToProps = state => {
-  console.log(state);
   return ({
     isUserLogged: state.userForm.isUserLogged
   })

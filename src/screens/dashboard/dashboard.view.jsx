@@ -19,7 +19,6 @@ export const DashboardView = (props) => {
     history
   } = props;
 
-  console.log(buyPrice)
   const handleClick = currId => history.push(`/currency/${currId}`)
 
   useEffect(() => {
