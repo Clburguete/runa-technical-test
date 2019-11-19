@@ -29,6 +29,8 @@ class UserForm extends Component {
     const validityRegex = /^[a-zA-Z]*$/;
     const isValidUserName = ((new RegExp(validityRegex)).test(userName))
 
+    console.log('username', userName);
+    console.log('!!userName', !!userName)
     return (
       <form>
         <Input
@@ -42,7 +44,7 @@ class UserForm extends Component {
         />
         <Button
           className='c-button--login'
-          disabled={!isValidUserName}
+          disabled={!userName || !isValidUserName}
           text={"Let's go!"}
           handleClick={this._handleSubmit}
         />

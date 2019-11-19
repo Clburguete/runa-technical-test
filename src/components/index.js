@@ -6,3 +6,4 @@ export { Input } from './input';
 export { CurrencyButton } from './currency';
 export { Backdrop } from './backdrop';
 export { Header } from './header';
+export { Error } from './error';

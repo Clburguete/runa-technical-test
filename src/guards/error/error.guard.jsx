@@ -1,8 +1,7 @@
 //vendors
 import React, { Component } from 'react';
 
-//components
-import { MainContainer } from '@components';
+import { Error } from '@components';
 
 export class ErrorBoundary extends Component {
 
@@ -17,14 +16,13 @@ export class ErrorBoundary extends Component {
     this.state = { error: null };
   }
 
+  navToDashboard = () => this.props.history.push(ROUTES.dashboard.path)
   render() {
     const { children } = this.props;
 
     if (this.state.error) {
       return (
-        <MainContainer>
-          <h2>Ooops...something went wrong. Sorry!</h2>
-        </MainContainer>
+        <Error/>
       )
     }
 
