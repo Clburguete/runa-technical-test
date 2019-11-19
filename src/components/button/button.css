@@ -18,33 +18,31 @@
 }
 
 .c-button--menu {
-  padding: 15px 10px;
   display: inline-flex;
+  padding: 16px 34px;
   width: unset;
   margin: 10px;
-
-  background-color: rgba(255, 255, 255, 0.05); 
+  
+  background-image: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%);
 }
 
 .c-button--return {
-  padding-right: 15px;
-  padding-left: 15px;
+  margin-left: 0px;
 }
 
+
 .c-button--logout {
-  padding-right: 15px;
-  padding-left: 15px;
   position: relative;
   right: 0;
 }
 
 .c-button--login {
+  display: flex;
+  width: fit-content;
   color: white;
+  padding: 16px;
+  font-weight: bold;
   background: rgba(4, 4, 155, 0.5);
-}
-
-.c-button--menu:first-of-type {
-  margin-left: 0px;
 }
 
 .c-button:hover {

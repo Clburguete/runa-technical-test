@@ -5,11 +5,11 @@
   right: 0;
 
   display: flex;
-  padding: 5px 80px;
+  padding: 16px 80px;
   margin-bottom: 20px;
   justify-content: space-between;
 
-  background-image: linear-gradient( rgb(19, 12, 82, 0.9), rgba(107, 108, 150, 0));
+  background-image: linear-gradient( rgb(19, 12, 82, 1), rgba(107, 108, 150, 0));
 }
 
 .c-navbar * {

@@ -7,6 +7,9 @@ import {
   Button
 } from '@components';
 
+//styles
+import './user-form.css';
+
 class UserForm extends Component {
 
   _handleSubmit = () => {
@@ -30,7 +33,7 @@ class UserForm extends Component {
     const isValidUserName = ((new RegExp(validityRegex)).test(userName))
 
     return (
-      <form>
+      <form className='c-user-form'>
         <Input
           errorMessage={'Please double check your username. Only regular characters are allowed'}
           label={'Please enter your username'}
